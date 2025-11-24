@@ -81,18 +81,21 @@ audio {
 
 /* НОВЫЕ СТИЛИ ДЛЯ КАРТИНКИ */
 .profile-image {
-    width: 150px; /* Размер аватара */
-    height: 150px;
-    object-fit: cover; /* Чтобы картинка не искажалась */
-    border-radius: 50%; /* Делаем круглым */
+    width: 90%; /* Занимает почти всю ширину контейнера */
+    max-width: 400px; /* Ограничиваем максимальный размер */
+    height: auto; /* Сохраняет исходные пропорции (прямоугольник) */
+    object-fit: cover; 
+    
+    border-radius: 0; /* <-- Убрали округление */
+    
     margin-bottom: 30px;
-    border: 3px solid #FF00FF; /* Кислотный розовый контур */
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7), 0 0 5px rgba(255, 0, 255, 0.5); /* Неоновое свечение */
+    
+    /* Сохраняем стильный неоновый эффект */
+    border: 3px solid #00FFFF; /* Неоновый контур */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 5px rgba(0, 255, 255, 0.5); 
     transition: transform 0.3s;
 }
 
 .profile-image:hover {
-    transform: scale(1.05); /* Легкий эффект при наведении */
+    transform: scale(1.02); /* Легкий эффект при наведении */
 }
-
-/* ... (Остальной код CSS, включая .container, h1, audio, и visualizer, остается без изменений) ... */
