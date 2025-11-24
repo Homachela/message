@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Центрирование контента */
 .container {
     display: flex;
     flex-direction: column;
@@ -18,11 +17,10 @@ body {
     padding: 20px;
 }
 
+/* Удаляем лишние отступы, которые были для заголовка */
 h1 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #00FFFF; /* Неоновый акцент */
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    display: none; /* Скрываем, но оставляем для title страницы */
+    margin-bottom: 0;
 }
 
 audio {
@@ -79,23 +77,21 @@ audio {
 .visualizer.active .bar:nth-child(5) { animation-delay: 0.8s; }
 
 
-/* НОВЫЕ СТИЛИ ДЛЯ КАРТИНКИ */
+/* СТИЛИ ДЛЯ КАРТИНКИ (Прямоугольник) */
 .profile-image {
-    width: 90%; /* Занимает почти всю ширину контейнера */
-    max-width: 400px; /* Ограничиваем максимальный размер */
-    height: auto; /* Сохраняет исходные пропорции (прямоугольник) */
+    width: 90%; 
+    max-width: 400px; 
+    height: auto; 
     object-fit: cover; 
     
-    border-radius: 0; /* <-- Убрали округление */
+    border-radius: 0; 
     
-    margin-bottom: 30px;
+    /* Уменьшаем отступ под картинкой, так как нет заголовка */
+    margin-bottom: 20px; 
     
-    /* Сохраняем стильный неоновый эффект */
-    border: 3px solid #00FFFF; /* Неоновый контур */
+    /* Стильный неоновый эффект */
+    border: 3px solid #00FFFF; 
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 5px rgba(0, 255, 255, 0.5); 
     transition: transform 0.3s;
 }
 
-.profile-image:hover {
-    transform: scale(1.02); /* Легкий эффект при наведении */
-}
