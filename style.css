@@ -1,19 +1,19 @@
-/* Общие стили для чистоты */
+/* Общие стили */
 body {
-    background-color: #1a1a1a; /* Простой темный фон */
+    background-color: #1a1a1a;
     color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Центрирование контента по вертикали и горизонтали */
+/* Центрирование контента */
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Занимает всю высоту экрана */
+    min-height: 100vh;
     text-align: center;
     padding: 20px;
 }
@@ -21,11 +21,59 @@ body {
 h1 {
     font-size: 2em;
     margin-bottom: 30px;
+    color: #00FFFF; /* Неоновый акцент */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
 }
 
-/* Стиль для аудиоплеера, чтобы он не выглядел слишком маленьким */
 audio {
     width: 90%;
-    max-width: 400px; /* Ограничиваем размер плеера */
+    max-width: 400px;
     margin-bottom: 20px;
 }
+
+/* Стили Визуализатора */
+.visualizer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Стержни растут от нижней части */
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    opacity: 0.3; /* Визуализатор приглушен, пока неактивен */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.visualizer.active {
+    opacity: 1; /* Полностью активен при воспроизведении */
+}
+
+.bar {
+    width: 15%;
+    background-color: #FF00FF; /* Кислотный цвет */
+    margin: 0 2px;
+    border-radius: 2px;
+    /* Начальная высота (неактивное состояние) */
+    height: 5px; 
+}
+
+/* Ключевые кадры для анимации пульсации */
+@keyframes pulse {
+    0% { height: 5px; }
+    50% { height: 45px; } /* Бар вырастает */
+    100% { height: 5px; }
+}
+
+/* Применяем анимацию только тогда, когда визуализатор активен */
+.visualizer.active .bar {
+    animation-name: pulse;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Добавляем задержку, чтобы анимация выглядела красиво и асинхронно */
+.visualizer.active .bar:nth-child(1) { animation-delay: 0s; }
+.visualizer.active .bar:nth-child(2) { animation-delay: 0.2s; }
+.visualizer.active .bar:nth-child(3) { animation-delay: 0.4s; }
+.visualizer.active .bar:nth-child(4) { animation-delay: 0.6s; }
+.visualizer.active .bar:nth-child(5) { animation-delay: 0.8s; }
