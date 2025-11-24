@@ -9,15 +9,24 @@
 <body>
 
     <div class="container">
-        <h1>Голосовое сообщение от HOMACHELA</h1>
+        <h1>[ СЕКРЕТНОЕ СООБЩЕНИЕ ОТ HOMACHELA ]</h1>
         
-        <audio controls>
+        <audio id="audioPlayer" controls>
             <source src="message.mp3" type="audio/mpeg">
             Ваш браузер не поддерживает воспроизведение аудио.
         </audio>
         
-        <p>Нажмите "Play" для прослушивания.</p>
+        <div id="visualizer" class="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <p>Нажмите "Play" для активации.</p>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
